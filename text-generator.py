@@ -4,7 +4,7 @@ from transformers import DistilBertTokenizer, DistilBertForSequenceClassificatio
 tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english", clean_up_tokenization_spaces=False)
 model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
 
-inputs = tokenizer("you are a super hero", return_tensors="pt")
+inputs = tokenizer("you are a bad guy", return_tensors="pt")
 with torch.no_grad():
     logits = model(**inputs).logits
 
